@@ -11,6 +11,7 @@
         <span p-text="message"></span>
         <br />
         <input type="text" p-model="message">
+        <img p-bind="src:image">
     </div>
     <script src="./platzi.js"></script>
     <script>
@@ -19,7 +20,8 @@
         const app = createApp({
             data() {
                 return {
-                    message: 'HOLA PLATZI'
+                    message: 'HOLA PLATZI',
+                    image: 'https://images.pexels.com/photos/10824356/pexels-photo-10824356.jpeg'
                 };
             }
         });
