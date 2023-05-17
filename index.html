@@ -17,6 +17,10 @@
                     <img src="" alt="">
                     <span>Producto - $500 </span>
                 </div>
+                <div class="cart-content__Product">
+                    <img src="" alt="">
+                    <span>Producto - $500 </span>
+                </div>
             </div>
         </header>
         <main>
@@ -31,10 +35,10 @@
             </section>
             <section class="description">
                 <h4>Producto</h4>
-                <span class="badge new"></span>
-                <span class="badge offer"></span>
+                <span class="badge new">Nuevo</span>
+                <span class="badge offer">Oferta</span>
                 <p class="description__status"></p>
-                <p class="description__price"></p>
+                <p class="description__price">$ 500.000</p>
                 <p class="description__content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas dicta officia neque deserunt consequatur omnis fugiat reprehenderit molestiae ullam. Harum aspernatur, possimus nostrum exercitationem totam voluptates? Eos assumenda nesciunt error.</p>
                 <div class="dincount">
                     <span>Codigo de descuento</span>
@@ -44,6 +48,12 @@
         </main>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
-    <script></script>
+    <script>
+        const {crateApp} = Vue;
+
+        const app = crateApp();
+        app.mount("#app");
+
+    </script>
 </body>
 </html>
