@@ -15,7 +15,7 @@
             <div class="cart-content">
                 <div class="cart-content__Product">
                     <img src="" alt="">
-                    <span>Producto - $500 </span>
+                    <span v-cloak>{{ product.name }} {{ product.price}} </span>
                 </div>
                 <div class="cart-content__Product">
                     <img src="" alt="">
@@ -34,7 +34,7 @@
                 </div>
             </section>
             <section class="description">
-                <h4>Producto</h4>
+                <h4 v-cloak>{{product.name.toUpperCase}} {{product.stock === 0 ? "😨" : "😍"}}</h4>
                 <span class="badge new">Nuevo</span>
                 <span class="badge offer">Oferta</span>
                 <p class="description__status"></p>
@@ -49,9 +49,26 @@
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-        const {crateApp} = Vue;
+        const { crateApp } = Vue;
 
-        const app = crateApp();
+        const app = crateApp({
+            data() {
+                return {
+                    product: {
+                        name: 'Camara',
+                        price: 450_000,
+                        stock: 12,
+                        content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas dicta officia neque deserunt consequatur`,
+                        images: [
+                            {image: "./images/camara-2.jpg",
+                            thumbnail: "./images/camara-2-thumb.jpg"},
+                            {image: "./images/camara.jpg",
+                            thumbnail: "./images/camara-thumb.jpg"}
+                    ]
+                    }
+                } 
+            }
+        });
         app.mount("#app");
 
     </script>
