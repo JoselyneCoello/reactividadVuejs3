@@ -13,13 +13,13 @@
             <h3>Platzi Commerce</h3>
             <button class="cart">carro</button>
             <div class="cart-content">
-                <div class="cart-content__product">
-                    <img v-bind:src="product.images[0].image" :alt="product.name.toUpperCase">
-                    <span v-cloak>{{ product.name }} {{ product.price}} </span>
+                <div class="cart-content__product cart-content__product.bg-gray">
+                    <img v-bind:src="product.images[0].image" :alt="product.name.toUpperCase()">
+                    <span>{{ product.name }} {{ product.price}} </span>
                 </div>
-                <div class="cart-content__product">
+                <div class="cart-content__product .cart-content__product.bg-gray">
                     <img src="" alt="">
-                    <span>Producto - $500 </span>
+                    <span>{{ product.name }} {{ product.price}} </span>
                 </div>
             </div>
         </header>
@@ -34,7 +34,7 @@
                 </div>
             </section>
             <section class="description">
-                <h4 v-cloak>{{product.name.toUpperCase}} {{product.stock === 0 ? "😨" : "😍"}}</h4>
+                <h4>{{product.name.toUpperCase()}} {{product.stock === 0 ? "😨" : "😍"}}</h4>
                 <span class="badge new">Nuevo</span>
                 <span class="badge offer">Oferta</span>
                 <p class="description__status"></p>
