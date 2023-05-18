@@ -14,11 +14,11 @@
             <button class="cart">carro</button>
             <div class="cart-content">
                 <div class="cart-content__product cart-content__product.bg-gray">
-                    <img v-bind:src="product.images[0].image" :alt="product.name.toUpperCase()">
+                    <img :src="product.images[0].image" :alt="product.name.toUpperCase()">
                     <span>{{ product.name }} {{ product.price}} </span>
                 </div>
-                <div class="cart-content__product .cart-content__product.bg-gray">
-                    <img src="" alt="">
+                <div class="cart-content__product cart-content__product.bg-gray">
+                    <img :src="product.images[1].image" :alt="product.name.toUpperCase()">
                     <span>{{ product.name }} {{ product.price}} </span>
                 </div>
             </div>
@@ -26,8 +26,8 @@
         <main>
             <section class="product">
                 <div class="product__thumbnails">
-                    <div class="thumb"></div>
-                    <div class="thumb"></div>
+                    <div class="thumb" :class="{ active: active === 0 }" :style="{ backgroundImage: `url(${product.images[0].thumbnail})` }"></div>
+                    <div class="thumb" :class="{ active: active === 1 }" :style="{ backgroundImage: `url(${product.images[0].thumbnail})` }"></div>
                 </div>
                 <div class="product__image">
                     <img src="" alt="">
@@ -65,8 +65,9 @@
                             {image: "./images/camara-2.jpg",
                             thumbnail: "./images/camara-2-thumb.jpg"}   
                     ]
-                    }
-                } 
+                    },
+                    activeImage: 0
+                }; 
             }
         });
         app.mount("#app");
