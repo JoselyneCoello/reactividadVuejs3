@@ -13,11 +13,11 @@
             <h3>Platzi Commerce</h3>
             <button class="cart">carro</button>
             <div class="cart-content">
-                <div class="cart-content__Product">
-                    <img src="" alt="">
+                <div class="cart-content__product">
+                    <img v-bind:src="product.images[0].image" :alt="product.name.toUpperCase">
                     <span v-cloak>{{ product.name }} {{ product.price}} </span>
                 </div>
-                <div class="cart-content__Product">
+                <div class="cart-content__product">
                     <img src="" alt="">
                     <span>Producto - $500 </span>
                 </div>
@@ -49,9 +49,9 @@
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-        const { crateApp } = Vue;
+        const { createApp } = Vue;
 
-        const app = crateApp({
+        const app = createApp({
             data() {
                 return {
                     product: {
@@ -60,10 +60,10 @@
                         stock: 12,
                         content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas dicta officia neque deserunt consequatur`,
                         images: [
-                            {image: "./images/camara-2.jpg",
-                            thumbnail: "./images/camara-2-thumb.jpg"},
                             {image: "./images/camara.jpg",
-                            thumbnail: "./images/camara-thumb.jpg"}
+                            thumbnail: "./images/camara-thumb.jpg"},
+                            {image: "./images/camara-2.jpg",
+                            thumbnail: "./images/camara-2-thumb.jpg"}   
                     ]
                     }
                 } 
